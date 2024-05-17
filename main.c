@@ -1,11 +1,11 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 #define MAX_BUF_SZ 1024
 #define LOOP_UP_LIM 2048
 #define TOINT(str) ((int)(strtol(str, NULL, 10)))
-#define ipow(x, y) ((int)(pow((int)x, (int)y)))
+#define IPOW(x, y) ((int)(pow((int)x, (int)y)))
 
 void push(int* stack, int* stack_sz, int num)
 {
@@ -78,7 +78,7 @@ void parse_op(const char** raw_dat, int raw_sz, int* stack, int* stack_sz)
             num2 = pop(stack, stack_sz);
 
             if (!(num1 == 0 && num2 == 0)) {
-                push(stack, stack_sz, ipow(num2, num1));
+                push(stack, stack_sz, IPOW(num2, num1));
             } else {
                 fprintf(stderr, "Cannot find 0^0! Indeterminate value!\n");
                 exit(EXIT_FAILURE);
