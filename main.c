@@ -80,7 +80,7 @@ void parse_op(const char** raw_dat, int raw_sz, int* stack, int* stack_sz)
             if (!(num1 == 0 && num2 == 0)) {
                 push(stack, stack_sz, IPOW(num2, num1));
             } else {
-                fprintf(stderr, "Cannot find 0^0! Indeterminate value!\n");
+                fprintf(stderr, "Cannot compute 0^0! Indeterminate!\n");
                 exit(EXIT_FAILURE);
             }
 
